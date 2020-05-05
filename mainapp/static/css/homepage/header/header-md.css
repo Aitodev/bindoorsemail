@@ -1,0 +1,15 @@
+@media (min-width: 768px) {
+  header .logo {
+    margin: 0 auto 0 0;
+  }
+  header .logo__img {
+    height: 40px;
+  }
+  header .phone {
+    margin: -8px auto 0 auto;
+  }
+  header .worktime {
+    text-align: center;
+  }
+}
+/*# sourceMappingURL=header-md.css.map */

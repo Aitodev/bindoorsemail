@@ -1,0 +1,613 @@
+{% extends 'wrapper.html' %}
+{% load static %}
+
+{% block title %}Bindoors - Главная{% endblock %}
+
+{% block content %}
+<header>
+    <div class="container">
+        <div class="row window_header">
+            <div class="col-md-4 col-sm-12">
+                <a href="/" class="logo">
+                    <img class="logo__img" src="{% static 'img/logo.svg' %}" alt="">
+                </a>
+            </div>
+            <div class="col-md-4 col-sm-6 col-12">
+                <a href="tel:+79775640883" class="phone">
+                    <p>+7 (977) 564-08-83</p>
+                </a>
+                <p class="worktime">С 10:00 до 20:00</p>
+            </div>
+            <div class="col-md-4 col-sm-6 col-12">
+                <div class="callback">
+                    <a href="#" class="open-modal_modal btn callback__button" data-modal_modal="#modal_modal1">Перезвоните
+                        мне</a>
+                    <div class="callback__social-wrapper">
+                        <a href="https://wa.me/79775640883" class="callback__social-item">
+                            <i class="fa fa-whatsapp"></i>
+                        </a>
+                        <a href="#" class="callback__social-item">
+                            <i class="fa fa-telegram"></i>
+                        </a>
+                        <a href="https://www.instagram.com/bindoors_moscow/" class="callback__social-item">
+                            <i class="fa fa-instagram"></i>
+                        </a>
+                        <a href="https://www.facebook.com/Bindoors-103749881323699" class="callback__social-item">
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row menu">
+            <nav class="menu__nav">
+                <ul class="menu__ul">
+                    <li class="menu__li">
+                        <a href="#about" class="menu__item">О нас</a>
+                    <li class="menu__li">
+                        <a href="#partners" class="menu__item">Наши Партнеры</a>
+                    <li class="menu__li">
+                        <a href="#projects" class="menu__item">Наши проекты</a>
+                    <li class="menu__li">
+                        <a href="#reviews" class="menu__item">Отзывы</a>
+                    <li class="menu__li">
+                        <a href="#contacts" class="menu__item">Контакты</a>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+<main>
+    <div class="container-fluid">
+        <div class="row window about" id="about">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h1 class="title title_black text-center">Продажа и установка входных и межкомнатных дверей в
+                            квартирах, домах и офисах</h1>
+                    </div>
+                </div>
+                <div class="row about__wrapper">
+                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                        <p class="about__desc">Добро пожаловать на главную страницу Bindoors.ru!</p>
+                        <p class="about__desc">Мы успешно работаем на рынке входных и межкомнатных дверей более 12 лет,
+                            за это время
+                            выполнили более 1000 проектов различной сложности.</p>
+                        <p class="about__desc">Позвоните нам или оставьте заявку на обратный звонок, и мы бесплатно
+                            проконсультируем Вас по
+                            вопросам приобретения и установки входных и межкомнатных дверей в Вашей квартире, доме или
+                            офисе.</p>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                        <div class="row">
+                            <div class="col-xl-6 col-lg-6 col-md-3 col-sm-6 col-6">
+                                <div class="about__feature">
+                                    <img src="{% static 'img/door.png' %}" alt="" class="about__feature-img">
+                                    <p class="about__feature-desc">Более 10 000 моделей дверей на выбор</p>
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-3 col-sm-6 col-6">
+                                <div class="about__feature">
+                                    <img src="{% static 'img/hands.png' %}" alt="" class="about__feature-img">
+                                    <p class="about__feature-desc">Сотрудничество с лучшими производителями</p>
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-3 col-sm-6 col-6">
+                                <div class="about__feature">
+                                    <img src="{% static 'img/warranty.png' %}" alt="" class="about__feature-img">
+                                    <p class="about__feature-desc">Гарантия качества</p>
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-3 col-sm-6 col-6">
+                                <div class="about__feature">
+                                    <img src="{% static 'img/great.png' %}" alt="" class="about__feature-img">
+                                    <p class="about__feature-desc">500+ довольных клиентов</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <a href="#" class="open-modal_modal btn about__button" data-modal_modal="#modal_modal2">Отправить
+                            заявку на каталог и прайс</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <form action="{% url 'quiz' %}" method="POST">
+            {% csrf_token %}
+            <div class="row window quiz justify-content-center">
+                <div class="col-12 quiz__1 quiz__step">
+                    <h1 class="title title_white text-center">Какие двери Вас интересуют?</h1>
+                    <p class="quiz__desc quiz__desc text-center">Подберем входные и межкомнатные двери по Вашим
+                        критериям</p>
+                </div>
+                <div class="col-xl-4 col-md-6 col-12 quiz__1 quiz__step">
+                    <input type="radio" name="door_type" class="quiz__input" id="entrance" value="Входные">
+                    <label for="entrance" class="quiz__label quiz__next" data-quiz=".quiz__2">
+                        <img src="{% static 'img/indoor.jpg' %}" alt="" class="quiz__img">
+                        <p class="quiz__item">Входные</p>
+                    </label>
+                </div>
+                <div class="col-xl-4 col-md-6 col-12 quiz__1 quiz__step">
+                    <input type="radio" name="door_type" class="quiz__input" id="room" value="Межкомнатные">
+                    <label for="room" class="quiz__label quiz__next" data-quiz=".quiz__2">
+                        <img src="{% static 'img/room.jpg' %}" alt="" class="quiz__img">
+                        <p class="quiz__item">Межкомнатные</p>
+                    </label>
+                </div>
+                <div class="col-xl-4 col-md-6 col-12 quiz__1 quiz__step">
+                    <input type="radio" name="door_type" class="quiz__input" id="entrance_room"
+                           value="И входные и межкомнатные">
+                    <label for="entrance_room" class="quiz__label quiz__next" data-quiz=".quiz__2">
+                        <img src="{% static 'img/indoor_room.jpg' %}" alt="" class="quiz__img">
+                        <p class="quiz__item">И входные, и межкомнатные</p>
+                    </label>
+                </div>
+                <div class="col-12 quiz__2 quiz__step">
+                    <h1 class="title title_white text-center">В каком ценовом сегменте Вас интересуют двери?</h1>
+                </div>
+                <div class="col-xl-4 col-md-6 col-12 quiz__2 quiz__step">
+                    <input type="radio" name="price_type" class="quiz__input" id="economy" value="Эконом">
+                    <label for="economy" class="quiz__label quiz__next" data-quiz=".quiz__3">
+                        <img src="{% static 'img/econom.jpg' %}" alt="" class="quiz__img">
+                        <p class="quiz__item">Эконом</p>
+                    </label>
+                </div>
+                <div class="col-xl-4 col-md-6 col-12 quiz__2 quiz__step">
+                    <input type="radio" name="price_type" class="quiz__input" id="standard" value="Стандарт">
+                    <label for="standard" class="quiz__label quiz__next" data-quiz=".quiz__3">
+                        <img src="{% static 'img/standart.jpg' %}" alt="" class="quiz__img">
+                        <p class="quiz__item">Стандарт</p>
+                    </label>
+                </div>
+                <div class="col-xl-4 col-md-6 col-12 quiz__2 quiz__step">
+                    <input type="radio" name="price_type" class="quiz__input" id="business" value="Бизнес">
+                    <label for="business" class="quiz__label quiz__next" data-quiz=".quiz__3">
+                        <img src="{% static 'img/business.jpg' %}" alt="" class="quiz__img">
+                        <p class="quiz__item">Бизнес</p>
+                    </label>
+                </div>
+                <div class="col-xl-4 col-md-6 col-12 quiz__2 quiz__step">
+                    <input type="radio" name="price_type" class="quiz__input" id="premium" value="Премиум">
+                    <label for="premium" class="quiz__label quiz__next" data-quiz=".quiz__3">
+                        <img src="{% static 'img/premium.jpg' %}" alt="" class="quiz__img">
+                        <p class="quiz__item">Премиум</p>
+                    </label>
+                </div>
+                <div class="col-12 quiz__2 quiz__step">
+                    <button class="btn quiz__prev quiz__next" data-quiz=".quiz__1">Назад</button>
+                </div>
+                <div class="col-12 quiz__3 quiz__step">
+                    <h1 class="title title_white text-center">Какой стиль дверей Вы предпочитаете?</h1>
+                </div>
+                <div class="col-xl-4 col-md-6 col-12 quiz__3 quiz__step">
+                    <input type="radio" name="style_type" class="quiz__input" id="classic" value="Классические">
+                    <label for="classic" class="quiz__label quiz__next" data-quiz=".quiz__4">
+                        <img src="{% static 'img/classic.jpg' %}" alt="" class="quiz__img">
+                        <p class="quiz__item">Классические</p>
+                    </label>
+                </div>
+                <div class="col-xl-4 col-md-6 col-12 quiz__3 quiz__step">
+                    <input type="radio" name="style_type" class="quiz__input" id="modern" value="Модерн">
+                    <label for="modern" class="quiz__label quiz__next" data-quiz=".quiz__4">
+                        <img src="{% static 'img/modern.jpg' %}" alt="" class="quiz__img">
+                        <p class="quiz__item">Модерн</p>
+                    </label>
+                </div>
+                <div class="col-xl-4 col-md-6 col-12 quiz__3 quiz__step">
+                    <input type="radio" name="style_type" class="quiz__input" id="highttech" value="Хай-тек">
+                    <label for="highttech" class="quiz__label quiz__next" data-quiz=".quiz__4">
+                        <img src="{% static 'img/hightech.jpg' %}" alt="" class="quiz__img">
+                        <p class="quiz__item">Хай-тек</p>
+                    </label>
+                </div>
+                <div class="col-xl-4 col-md-6 col-12 quiz__3 quiz__step">
+                    <input type="radio" name="style_type" class="quiz__input" id="country" value="Кантри">
+                    <label for="country" class="quiz__label quiz__next" data-quiz=".quiz__4">
+                        <img src="{% static 'img/country.jpg' %}" alt="" class="quiz__img">
+                        <p class="quiz__item">Кантри</p>
+                    </label>
+                </div>
+                <div class="col-xl-4 col-md-6 col-12 quiz__3 quiz__step">
+                    <input type="radio" name="style_type" class="quiz__input" id="scandinavian" value="Скандинавские">
+                    <label for="scandinavian" class="quiz__label quiz__next" data-quiz=".quiz__4">
+                        <img src="{% static 'img/scandinavian.jpg' %}" alt="" class="quiz__img">
+                        <p class="quiz__item">Скандинавский</p>
+                    </label>
+                </div>
+                <div class="col-12 quiz__3 quiz__step">
+                    <button class="btn quiz__prev quiz__next" data-quiz=".quiz__2">Назад</button>
+                </div>
+                <div class="col-12 quiz__4 quiz__step">
+                    <h1 class="title title_white text-center">Какой размер полотна?</h1>
+                </div>
+                <div class="col-xl-4 col-md-6 col-12 quiz__4 quiz__step">
+                    <input type="radio" name="size_type" class="quiz__input" id="typical" value="Типовые">
+                    <label for="typical" class="quiz__label quiz__next" data-quiz=".quiz__5">
+                        <img src="{% static 'img/typed.jpg' %}" alt="" class="quiz__img">
+                        <p class="quiz__item">Типовой*</p>
+                    </label>
+                </div>
+                <div class="col-xl-4 col-md-6 col-12 quiz__4 quiz__step">
+                    <input type="radio" name="size_type" class="quiz__input" id="nonstandart" value="Нестандартные">
+                    <label for="nonstandart" class="quiz__label quiz__next" data-quiz=".quiz__5">
+                        <img src="{% static 'img/nonstandart.jpg' %}" alt="" class="quiz__img">
+                        <p class="quiz__item">Нестандартный</p>
+                    </label>
+                </div>
+                <div class="col-6 quiz__4 quiz__step">
+                    <p class="quiz__desc">* Типовые размеры дверей: 600×2000 700×2000 800×2000 900×2000</p>
+                </div>
+                <div class="col-12 quiz__4 quiz__step">
+                    <button class="btn quiz__prev quiz__next" data-quiz=".quiz__3">Назад</button>
+                </div>
+                <div class="col-12 quiz__5 quiz__step">
+                    <h1 class="title title_white text-center">Какой материал рассматриваете?</h1>
+                </div>
+                <div class="col-xl-4 col-md-6 col-12 quiz__5 quiz__step">
+                    <input type="radio" name="material_type" class="quiz__input" id="MDF" value="МДФ">
+                    <label for="MDF" class="quiz__label quiz__next" data-quiz=".quiz__6">
+                        <img src="{% static 'img/mdf.jpg' %}" alt="" class="quiz__img">
+                        <p class="quiz__item">МДФ</p>
+                    </label>
+                </div>
+                <div class="col-xl-4 col-md-6 col-12 quiz__5 quiz__step">
+                    <input type="radio" name="material_type" class="quiz__input" id="wood" value="Дерево">
+                    <label for="wood" class="quiz__label quiz__next" data-quiz=".quiz__6">
+                        <img src="{% static 'img/wood.jpg' %}" alt="" class="quiz__img">
+                        <p class="quiz__item">Дерево</p>
+                    </label>
+                </div>
+                <div class="col-xl-4 col-md-6 col-12 quiz__5 quiz__step">
+                    <input type="radio" name="material_type" class="quiz__input" id="glass" value="Стекло">
+                    <label for="glass" class="quiz__label quiz__next" data-quiz=".quiz__6">
+                        <img src="{% static 'img/glass.jpg' %}" alt="" class="quiz__img">
+                        <p class="quiz__item">Стекло</p>
+                    </label>
+                </div>
+                <div class="col-xl-4 col-md-6 col-12 quiz__5 quiz__step">
+                    <input type="radio" name="material_type" class="quiz__input" id="veneer" value="Шпон">
+                    <label for="veneer" class="quiz__label quiz__next" data-quiz=".quiz__6">
+                        <img src="{% static 'img/veneer.jpg' %}" alt="" class="quiz__img">
+                        <p class="quiz__item">Шпон</p>
+                    </label>
+                </div>
+                <div class="col-xl-4 col-md-6 col-12 quiz__5 quiz__step">
+                    <input type="radio" name="material_type" class="quiz__input" id="ecoveneer" value="Экошпон">
+                    <label for="ecoveneer" class="quiz__label quiz__next" data-quiz=".quiz__6">
+                        <img src="{% static 'img/ecoveneer.jpg' %}" alt="" class="quiz__img">
+                        <p class="quiz__item">Экошпон</p>
+                    </label>
+                </div>
+                <div class="col-xl-4 col-md-6 col-12 quiz__5 quiz__step">
+                    <input type="radio" name="material_type" class="quiz__input" id="enamel" value="Эмаль">
+                    <label for="enamel" class="quiz__label quiz__next" data-quiz=".quiz__6">
+                        <img src="{% static 'img/enamel.jpg' %}" alt="" class="quiz__img">
+                        <p class="quiz__item">Эмаль</p>
+                    </label>
+                </div>
+                <div class="col-12 quiz__5 quiz__step">
+                    <button class="btn quiz__prev quiz__next" data-quiz=".quiz__4">Назад</button>
+                </div>
+                <div class="col-12 quiz__6 quiz__step">
+                    <h1 class="title title_white text-center">Последний шаг!</h1>
+                    <p class="quiz__desc quiz__desc_title text-center">Укажите Ваши контакты, и мы пришлем Вам
+                        персональное
+                        предложение по установке входных и межкомнатных дверей, исходя из Ваших пожеланий.</p>
+                </div>
+                <div class="col-xl-4 col-md-6 col-12 quiz__6 quiz__step">
+                    <input type="text" placeholder="Введите имя" class="form-control quiz__mail quiz__mail_name"
+                           name="name">
+                    <input type="email" placeholder="Введите e-mail" class="form-control quiz__mail quiz__mail_mail"
+                           name="mail">
+                    <input type="tel" placeholder="Введите номер телефона" name="phone"
+                           class="form-control quiz__mail quiz__mail_phone">
+                    <input type="submit" class="btn quiz__submit">
+                    <button class="btn quiz__prev quiz__next" data-quiz=".quiz__5">Назад</button>
+                    <p class="form-check-label quiz__agreement">
+                        <input type="checkbox">
+                        Согласен с <a href="agreement/" class="quiz__agreement_link">обработкой данных</a>
+                    </p>
+                </div>
+                <div class="col-12 quiz__7 quiz__step">
+                    <h1 class="title title_white text-center">Спасибо!</h1>
+                    <p class="quiz__desc quiz__desc_title text-center">Ваша заявка принята. Через некоторое время Вам на
+                        почту придет наше уникальное предложение.</p>
+                </div>
+            </div>
+        </form>
+        <div class="row window partners justify-content-center" id="partners">
+            <div class="col-12">
+                <h1 class="title title_white text-center">Наши партнеры</h1>
+            </div>
+            <div class="col-12">
+                <p class="partners__desc">Мы сотрудничаем напрямую с проверенными производителями входных и межкомнатных
+                    дверей и дверной фурнитуры, тщательно проверяя каждую позицию каталога и предлагая Вам лучшее, что
+                    сейчас есть на рынке.</p>
+            </div>
+            {% for p in partners %}
+            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
+                <img class="partners__img" src="{{ p.img.url }}" alt="{{ p.name }}">
+            </div>
+            {% endfor %}
+        </div>
+        <div class="row window projects" id="projects">
+            <div class="col-12">
+                <h1 class="title title_black text-center">Наши проекты</h1>
+            </div>
+            <div class="col-12">
+                <div class="projects__slider">
+                    {% for p in projects %}
+                    <div class="container-fluid projects__fotorama fotorama__select">
+                        <div class="row projects__fotorama-row">
+                            <div class="col-xl-6 col-12">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="row">
+                                            <div class="col-4 projects__img-wrap">
+                                                <img src="{{ p.thumb1.url }}" alt=""
+                                                     class="projects__img projects__img_123"
+                                                     data-img="#img{{ p.pk }}01" data-fls="#fls{{ p.pk }}">
+                                            </div>
+                                            <div class="col-4 projects__img-wrap">
+                                                <img src="{{ p.thumb2.url }}" alt=""
+                                                     class="projects__img projects__img_123"
+                                                     data-img="#img{{ p.pk }}02" data-fls="#fls{{ p.pk }}">
+                                            </div>
+                                            <div class="col-4 projects__img-wrap">
+                                                <img src="{{ p.thumb3.url }}" alt=""
+                                                     class="projects__img projects__img_123"
+                                                     data-img="#img{{ p.pk }}03" data-fls="#fls{{ p.pk }}">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-12 projects__img-wrap">
+                                                <img src="{{ p.thumb4.url }}" alt=""
+                                                     class="projects__img projects__img_456"
+                                                     data-img="#img{{ p.pk }}04" data-fls="#fls{{ p.pk }}">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="row">
+                                            <div class="col-6 projects__img-wrap">
+                                                <img src="{{ p.thumb5.url }}" alt=""
+                                                     class="projects__img projects__img_align projects__img_456"
+                                                     data-img="#img{{ p.pk }}05" data-fls="#fls{{ p.pk }}">
+                                            </div>
+                                            <div class="col-6 projects__img-wrap">
+                                                <img src="{{ p.thumb6.url }}" alt=""
+                                                     class="projects__img projects__img_align projects__img_456"
+                                                     data-img="#img{{ p.pk }}06" data-fls="#fls{{ p.pk }}">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-12 d-none d-md-block">
+                                <p class="projects__text projects__text_object"><span class="projects__text_bold">Объект: </span>
+                                    {{ p.object }}
+                                </p>
+                                <p class="projects__text projects__text_adress"><span
+                                        class="projects__text_bold">Адрес: </span>{{ p.address }}
+                                </p>
+                                <p class="projects__text projects__text_date"><span class="projects__text_bold">Дата монтажа: </span>
+                                    {{ p.date }}</p>
+                                <p class="projects__text projects__text_task"><span
+                                        class="projects__text_bold">Задача: </span> {{ p.task }}</p>
+                                <p class="projects__text projects__text_jobs"><span class="projects__text_bold">Выполненные работы: </span>
+                                    {{ p.jobs }}</p>
+                                <p class="projects__text projects__text_price"><span class="projects__text_bold">Общая стоимость проекта:</span>
+                                    {{ p.price }} рублей</p>
+                            </div>
+                        </div>
+                        <script>
+                            $(document).ready(function () {
+
+                            });
+                        </script>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="col-12">
+                <a href="#" class="open-modal_modal btn projects__button" data-modal_modal="#modal_modal2">Отправить
+                    заявку на каталог и прайс</a>
+            </div>
+        </div>
+        <div class="row window order">
+            <div class="col-lg-6 offset-lg-6 col-12">
+                <h1 class="text-center title title_black">Заявка на каталог и прайс</h1>
+            </div>
+            <div class="col-lg-6 offset-lg-6 col-12">
+                <form action="{% url 'sendcatandprice' %}" method="POST">
+                    {% csrf_token %}
+                    <input type="text" class="form-control order__input order__name" placeholder="ФИО" name="name">
+                    <input type="text" class="form-control order__input order__phone" placeholder="Телефон"
+                           name="phone">
+                    <input type="email" class="form-control order__input order__mail" placeholder="E-mail" name="mail">
+                    <p class="text-center order__agreement">
+                        <input type="checkbox">
+                        Согласен с <a href="agreement/">Обработкой данных</a>
+                    </p>
+                    <input type="submit" class="btn order__button">
+                </form>
+            </div>
+        </div>
+        <div class="row window reviews justify-content-center" id="reviews">
+            <div class="col-12">
+                <h1 class="title title_white text-center">Отзывы</h1>
+            </div>
+            <div class="col-12">
+                <div class="reviews__slider">
+                    {% for r in reviews %}
+                    <div class="reviews__item">
+                        <div class="reviews__review">
+                            <div class="row">
+                                <div class="col-md-6 col-12">
+                                    <img src="{{ r.img.url }}" alt="" class="reviews__img">
+                                </div>
+                                <div class="col-md-6 col-12">
+                                    <p class="reviews__name">{{ r.name }}</p>
+                                    <p class="reviews__city">{{ r.city }}</p>
+                                    <p class="reviews__text">{{ r.text }}</p>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="col-12">
+                <a href="#" class="open-modal_modal btn reviews__button" data-modal_modal="#modal_modal2">Отправить
+                    заявку на
+                    каталог и прайс</a>
+            </div>
+        </div>
+        <!--<section class="services row">
+            <h2 class="heading">Наши услуги</h2>
+            <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Vero fugiat doloribus illo, incidunt dolor error illum ipsa
+                accusamus, deserunt architecto laboriosam quo inventore consequatur
+                voluptatem eaque, nemo magnam! Unde, ipsam.</p>
+            <div class="container">
+                <div class="serviceBx">
+                    <div>
+                        <img src="{% static 'img/icon1.png' %}" alt="">
+                        <h2>Эконом</h2>
+                    </div>
+                </div>
+                <div class="serviceBx">
+                    <div>
+                        <img src="{% static 'img/icon2.png' %}" alt="">
+                        <h2>стандарт</h2>
+                    </div>
+                </div>
+                <div class="serviceBx">
+                    <div>
+                        <img src="{% static 'img/icon3.png' %}" alt="">
+                        <h2>премиум</h2>
+                    </div>
+                </div>
+        </section>
+        <section class="technology row">
+            <div class="contentBx">
+                <h2 class="heading">Мы используем новейшие технолгии</h2>
+                <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Doloribus dolores, itaque excepturi at minima quis ab
+                    sint quia recusandae alias fugit sequi provident neque nihil,
+                    soluta, laborum nesciunt in quos!</p>
+            </div>
+            <div class="imgBx">
+                <img src="{% static 'img/tech.png' %}">
+            </div>
+        </section>-->
+    </div>
+</main>
+<footer class="footer">
+    <div class="container">
+        <div class="window_small row" id="contacts">
+            <div class="col-lg-3 col-sm-6 col-12 footer__block">
+                <p class="footer__logo">Bindoors</p>
+                <p class="footer__desc">Данный интернет-сайт носит исключительно информационный характер и не является
+                    публичной офертой, определяемой положениями Статьи 437 (2) ГК РФ. Все права защищены
+                    ©Bindoors.2020</p>
+                <a href="privacy/">Политика конфиденциальности</a>
+            </div>
+            <div class="col-lg-3 col-sm-6 col-12 footer__block">
+                <p class="footer__title">BINDOORS</p>
+                <ul class="footer__ul">
+                    <li class="footer__li"><a href="#about" class="footer__link">О нас</a></li>
+                    <li class="footer__li"><a href="#partners" class="footer__link">Наши партнеры</a></li>
+                    <li class="footer__li"><a href="#projects" class="footer__link">Наши проекты</a></li>
+                    <li class="footer__li"><a href="#reviews" class="footer__link">Отзывы</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-sm-6 col-12 footer__block">
+                <p class="footer__title">ПОДПИШИТЕСЬ</p>
+                <p class="footer__desc">Подпишитесь на наши социальные сети.</p>
+                <a href="https://wa.me/79775640883"><i class="fa fa-whatsapp footer__social"></i></a>
+                <a href="#"><i class="fa fa-telegram footer__social"></i></a>
+                <a href="https://www.instagram.com/bindoors_moscow/"><i class="fa fa-instagram footer__social"></i></a>
+                <a href="https://www.facebook.com/Bindoors-103749881323699"><i
+                        class="fa fa-facebook footer__social"></i></a>
+                <a href="tel:+79775640883" class="footer__phone">+7 (977) 564-08-83</a>
+                <a href="mailto:info@bindoors.ru" class="footer__phone">info@bindoors.ru</a>
+            </div>
+            <div class="col-lg-3 col-sm-6 col-12 footer__block">
+                <p class="footer__title">ПОДПИСКА</p>
+                <p class="footer__desc">Укажите свой e-mail адрес, чтобы получать уведомления о наших акциях и
+                    предложениях.</p>
+                <form action="{% url 'subscribe' %}" method="POST">
+                    {% csrf_token %}
+                    <input type="email" name="mail">
+                    <input type="submit" value="Отправить" class="footer__button">
+                    <p class="form-check-label footer__desc">
+                        <input type="checkbox">
+                        Согласен с <a href="agreement/">обработкой данных</a>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+<div class='modal_modal' id='modal_modal1'>
+    <div class='content'>
+        <h1 class='title'>Оставьте свой телефон и мы перезвоним в течение 15 минут</h1>
+        <form action="{% url 'recall' %}" method="POST">
+            {% csrf_token %}
+            <input type="text" class="form-control mod_inputs recall__name" placeholder="Имя" name="name">
+            <input type="text" class="form-control mod_inputs recall__phone"
+                   placeholder="+7 (495) 123-45-67 (Обязательное поле)" name="phone">
+            <p class="form-check-label recall__agreement">
+                <input type="checkbox">
+                Согласен с <a href="agreement/">обработкой данных</a>
+            </p>
+            <input type="submit" class='button_send btn recall__send'>
+            <a class='button_cancel close-modal_modal btn' data-modal_modal="#modal_modal1" href="#">Отмена</a>
+        </form>
+    </div>
+</div>
+<div class='modal_modal' id='modal_modal2'>
+    <div class='content'>
+        <h1 class='title'>Введите E-mail</h1>
+        <form action="{% url 'sendcatalog' %}" method="POST">
+            {% csrf_token %}
+            <input type="text" class="mod_inputs form-control sendmail__mail" placeholder="mail@example.com"
+                   name="mail">
+            <p class="form-check-label sendmail__agreement">
+                <input type="checkbox">
+                Согласен с <a href="agreement/">обработкой данных</a>
+            </p>
+            <input type="submit" class='button_send sendmail__send btn'>
+            <a class='button_cancel close-modal_modal btn' data-modal_modal="#modal_modal2" href="#">Отмена</a>
+        </form>
+    </div>
+</div>
+{% for p in projects %}
+<div class="fullscreen" id="fls{{ p.pk }}">
+    <div class="fullscreen__prev fullscreen__arr fullscreen__btn"></div>
+    <img src="{{ p.img1.url }}" alt="" class="fullscreen__img" id="img{{ p.pk }}01">
+    <img src="{{ p.img2.url }}" alt="" class="fullscreen__img" id="img{{ p.pk }}02">
+    <img src="{{ p.img3.url }}" alt="" class="fullscreen__img" id="img{{ p.pk }}03">
+    <img src="{{ p.img4.url }}" alt="" class="fullscreen__img" id="img{{ p.pk }}04">
+    <img src="{{ p.img5.url }}" alt="" class="fullscreen__img" id="img{{ p.pk }}05">
+    <img src="{{ p.img6.url }}" alt="" class="fullscreen__img" id="img{{ p.pk }}06">
+    <div class="fullscreen__next fullscreen__arr fullscreen__btn"></div>
+    <div class="fullscreen__cross fullscreen__btn"></div>
+</div>
+{% endfor %}
+
+<script src="{% static 'js/slick.js' %}"></script>
+<script src="{% static 'js/main.js' %}"></script>
+{% endblock %}

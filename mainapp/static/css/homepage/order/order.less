@@ -1,0 +1,29 @@
+.order {
+  background: url("../img/bg02-min.jpg") fixed center;
+  background-size: cover;
+
+  &__input {
+    margin: 0 auto 10px auto;
+    width: 50%;
+  }
+  &__agreement {
+    margin: 0 auto;
+    width: fit-content;
+  }
+
+  &__button {
+    display: block;
+    width: fit-content;
+    margin: 20px auto 0 auto;
+    color: @white;
+    background-color: @green;
+    font-weight: 600;
+    transition: all 0.3s;
+
+    &:hover {
+      text-decoration: none;
+      background-color: @green-dark;
+      color: @white;
+    }
+  }
+}

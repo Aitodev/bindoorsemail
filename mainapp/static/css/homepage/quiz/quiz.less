@@ -1,0 +1,114 @@
+.quiz {
+  background-color: @green;
+
+  &__input {
+    display: none;
+
+    &:checked + .quiz__label {
+      background-color: @white;
+      color: @green;
+    }
+  }
+
+  &__img {
+    height: 100px;
+  }
+
+  &__label {
+    display: block;
+    max-width: 250px;
+    width: 100%;
+    margin: 0 auto 20px auto;
+    padding: 10px 0;
+    color: @white;
+    font-size: 1rem;
+    border-radius: 10px;
+    transition: all 0.3s;
+    text-align: center;
+
+    &:hover {
+      transform: scale(1.03);
+    }
+  }
+
+  &__item {
+    margin: 0;
+  }
+  &__step {
+    display: none;
+    opacity: 0;
+    transition: all 0.3s;
+    text-align: center;
+  }
+  &__prev {
+    display: inline-block;
+    width: fit-content;
+    margin: 10px auto 0 auto;
+    border: 2px solid @white;
+    color: @white;
+    transition: all 0.3s;
+    &:hover {
+      color: @white;
+      transform: scale(1.1);
+    }
+    &:focus {
+      box-shadow: none;
+      background-color: @white;
+      color: @green;
+    }
+  }
+  &__1 {
+    display: block;
+    opacity: 1;
+    transition: all 0.3s;
+  }
+  &__desc {
+    color: @white;
+    margin-top: 30px;
+
+    &_title {
+      margin-top: -20px;
+      font-size: 1rem;
+    }
+  }
+  &__mail {
+    display: block;
+    margin: 10px auto;
+    width: 50%;
+    min-width: 300px;
+    color: @white;
+    background-color: @green;
+    border: 2px solid @white;
+
+    &::placeholder {
+      color: @white;
+    }
+
+    &:focus {
+      background-color: @green;
+      outline: none;
+      color: @white;
+      border: 2px solid @white;
+      box-shadow: none;
+
+      &::placeholder {
+        opacity: 0;
+      }
+    }
+  }
+
+  &__submit {
+    background-color: @white;
+    margin: 10px auto 0 auto;
+    display: inline-block;
+  }
+  &__agreement {
+    margin-top: 10px;
+    color: @white;
+    text-align: center;
+    &_link {
+      color: @white;
+      text-decoration: underline;
+    }
+  }
+}

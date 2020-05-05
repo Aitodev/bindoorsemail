@@ -1,0 +1,9 @@
+.order {
+  background: url("../img/bg02-min.jpg") fixed center;
+  background-size: cover;
+}
+.order__input {
+  margin: 0 auto 10px auto;
+  width: 50%;
+}
+/*# sourceMappingURL=order.css.map */

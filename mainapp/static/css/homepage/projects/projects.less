@@ -1,0 +1,203 @@
+.projects {
+  &__fotorama {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+  &__img-wrap {
+    padding: 0;
+  }
+
+  &__img {
+    width: 100%;
+    transition: all 0.3s;
+    border-radius: 10px;
+    &_123 {
+      transform: scale(0.95);
+    }
+    &_456 {
+      transform: scale(0.98);
+    }
+
+    &:hover {
+      transform: scale(0.9);
+    }
+  }
+
+  &__text {
+    display: block;
+    width: fit-content;
+    margin-left: 80px;
+    margin-right: 60px;
+    margin-bottom: 0;
+    padding-bottom: 10px;
+    transition: all 0.3s;
+
+    &::before {
+      content: '';
+      margin-left: 50px;
+      width: 30px;
+      height: 30px;
+      position: absolute;
+      left: 0;
+    }
+
+    &::after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 2px;
+      background-color: @green;
+      transition: all 0.3s;
+    }
+
+    &:hover::after {
+      width: 100%;
+    }
+
+    &_bold {
+      font-weight: 600;
+    }
+
+    &_object {
+      &::before {
+        background: url("../img/home.png") center no-repeat;
+        background-size: contain;
+      }
+    }
+
+    &_adress {
+      &::before {
+        background: url("../img/geo.png") center no-repeat;
+        background-size: contain;
+      }
+    }
+
+    &_date {
+      &::before {
+        background: url("../img/calendar.png") center no-repeat;
+        background-size: contain;
+      }
+    }
+
+    &_task {
+      &::before {
+        background: url("../img/pencil.png") center no-repeat;
+        background-size: contain;
+      }
+    }
+
+    &_jobs {
+      &::before {
+        background: url("../img/check.png") center no-repeat;
+        background-size: contain;
+      }
+    }
+
+    &_price {
+      &::before {
+        background: url("../img/money.png") center no-repeat;
+        background-size: contain;
+      }
+    }
+  }
+  &__button {
+    display: block;
+    width: fit-content;
+    margin: 20px auto 0 auto;
+    color: @white;
+    background-color: @green;
+    font-weight: 600;
+    transition: all 0.3s;
+
+    &:hover {
+      text-decoration: none;
+      background-color: @green-dark;
+      color: @white;
+    }
+  }
+
+
+
+
+
+  /* Слайдер */
+.slick-slider{}
+/* Слайдер запущен */
+.slick-slider.slick-initialized{}
+/* Слайдер с точками */
+.slick-slider.slick-dotted{}
+/* Ограничивающая оболочка */
+.slick-list {
+}
+/* Лента слайдов */
+.slick-track{
+}
+/* Слайд */
+.slick-slide{}
+/* Слайд активный (показывается) */
+.slick-slide.slick-active{}
+/* Слайд основной */
+.slick-slide.slick-current{}
+/* Слайд по центру */
+.slick-slide.slick-center{}
+/* Клонированный слайд */
+.slick-slide.slick-cloned{}
+/* Стрелка */
+.slick-arrow{
+  position: absolute;
+  top: 50%;
+  margin-top: -15px;
+  font-size: 0;
+  width: 30px;
+  height: 30px;
+  border: none;
+  z-index: 2;
+  &:focus {
+    outline: none;
+  }
+}
+/* Стрелка влево */
+.slick-arrow.slick-prev{
+  left: 0;
+  background: url('../img/door_prev.png');
+  background-size: contain;
+}
+/* Стрелка вправо */
+.slick-arrow.slick-next{
+  right: 0;
+  background: url('../img/door_next.png');
+  background-size: contain;
+}
+/* Стрелка не активная */
+.slick-arrow.slick-disabled{}
+/* Точки (булиты) */
+.slick-dots{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+.slick-dots li{
+  list-style: none;
+  margin: 0 5px;
+}
+/* Активная точка */
+.slick-dots li.slick-active{
+  button {
+    background-color: @gray-dark;
+  }
+}
+/* Элемент точки */
+.slick-dots li button{
+  font-size: 0;
+  width: 10px;
+  height: 10px;
+  background-color: @white;
+  border-radius: 50%;
+  border: 1px solid @gray-dark;
+  padding: 0;
+  &:focus {
+    outline: none;
+  }
+}
+}

@@ -1,0 +1,78 @@
+.fullscreen {
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: #000C;
+  justify-content: center;
+  align-items: center;
+  display: none;
+  opacity: 0;
+  z-index: 3;
+  transition: all 0.3s;
+
+  &__img {
+    max-width: 75%;
+    max-height: 80%;
+    border-radius: 10px;
+    display: none;
+    opacity: 0;
+    position: absolute;
+    user-select: none;
+    transition: all 0.3s;
+  }
+
+  &__btn {
+    width: 30px;
+    height: 30px;
+    display: block;
+    transition: all 0.3s;
+    position: absolute;
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.1);
+    }
+  }
+
+  &__arr {
+    top: 50%;
+    margin-top: -15px;
+  }
+
+  &__next {
+    background: url("../img/door_next.png");
+    background-size: contain;
+    right: 10px;
+  }
+
+  &__prev {
+    background: url("../img/door_prev.png");
+    background-size: contain;
+    left: 10px;
+  }
+
+  &__cross {
+    border: 2px solid @white;
+    border-radius: 50%;
+    top: 30px;
+    right: 30px;
+    background: url("../img/cross.png");
+    background-size: contain;
+  }
+}
+
+@media (min-width: 768px) {
+  .fullscreen {
+    &__next {
+      right: 30px;
+    }
+    &__prev {
+      left: 30px;
+    }
+    &__img {
+      max-width: 80%;
+    }
+  }
+}
